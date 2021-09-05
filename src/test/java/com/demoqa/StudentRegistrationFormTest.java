@@ -14,7 +14,7 @@ public class StudentRegistrationFormTest {
     private String lastName = "Guskova";
     private String userEmail = "irina.guskova.2704@gmail.com";
     private String gender = "Female";
-    private String number = "8968193581";
+    private String number = "8968000000";
     private String month = "April";
     private String year = "1993";
     private String subject = "English";
@@ -55,7 +55,7 @@ public class StudentRegistrationFormTest {
         $(".table-responsive").shouldHave(text("Irina Guskova"));
         $(".table-responsive").shouldHave(text("irina.guskova.2704@gmail.com"));
         $(".table-responsive").shouldHave(text("Female"));
-        $(".table-responsive").shouldHave(text("8968193581"));
+        $(".table-responsive").shouldHave(text("8968000000"));
         $(".table-responsive").shouldHave(text("27 April,1993"));
         $(".table-responsive").shouldHave(text("English"));
         $(".table-responsive").shouldHave(text("Sports"));
