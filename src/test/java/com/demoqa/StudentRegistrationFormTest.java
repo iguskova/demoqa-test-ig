@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Condition.text;
 
-
 public class StudentRegistrationFormTest {
 
     private String firstName = "Irina";
@@ -20,10 +19,9 @@ public class StudentRegistrationFormTest {
     private String year = "1993";
     private String subject = "English";
     private String hobby = "Sports";
-    private String address = "Parashutnaya street";
+    private String address = "Parashutnaya street, 33k1";
     private String state = "Haryana";
     private String city = "Panipat";
-
 
     @BeforeAll
     static void beforeAll() {
@@ -65,5 +63,6 @@ public class StudentRegistrationFormTest {
         $(".table-responsive").shouldHave(text("Parashutnaya street"));
         $(".table-responsive").shouldHave(text("Haryana Panipat"));
     }
+
 
 }
