@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Condition.text;
 
 
 public class StudentRegistrationFormTest {
@@ -45,26 +46,24 @@ public class StudentRegistrationFormTest {
         $("#hobbiesWrapper").$(byText(hobby)).click();
         $("#uploadPicture").uploadFromClasspath("img/ava1.jpeg");
         $("#currentAddress").setValue(address);
+        $("#submit").scrollIntoView(true);
         $("#stateCity-wrapper").$("#state").click();
         $("#state").$(byText(state)).click();
         $("#stateCity-wrapper").$("#city").click();
         $("#city").$(byText(city)).click();
         $("#submit").click();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        $(".modal-title").shouldHave(text("Thanks for submitting the form"));
+        $(".table-responsive").shouldHave(text("Irina Guskova"));
+        $(".table-responsive").shouldHave(text("irina.guskova.2704@gmail.com"));
+        $(".table-responsive").shouldHave(text("Female"));
+        $(".table-responsive").shouldHave(text("8968193581"));
+        $(".table-responsive").shouldHave(text("27 April,1993"));
+        $(".table-responsive").shouldHave(text("English"));
+        $(".table-responsive").shouldHave(text("Sports"));
+        $(".table-responsive").shouldHave(text("ava1.jpeg"));
+        $(".table-responsive").shouldHave(text("Parashutnaya street"));
+        $(".table-responsive").shouldHave(text("Haryana Panipat"));
     }
-
 
 }
